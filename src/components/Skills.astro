@@ -1,8 +1,13 @@
 ---
+import { languages } from '../data/ui.js';
+
+const { lang = "en" } = Astro.props;
+const t = languages[lang];
+
 const groups = [
   { label: "Backend", items: ["Java 21", "Spring Boot", "Spring Security", "REST APIs", "Apache Kafka", "WebSocket"] },
   { label: "Persistence", items: ["JPA/Hibernate", "MySQL", "PostgreSQL"] },
-  { label: "Testing & Quality", items: ["JUnit 5", "Mockito", "Clean Code", "SOLID"] },
+  { label: t['stack.testing.text'], items: ["JUnit 5", "Mockito", "Clean Code", "SOLID"] }, // ¡Llaves corregidas aquí!
   { label: "DevOps", items: ["Docker", "GitHub Actions", "CI/CD", "Nginx"] },
   { label: "Frontend", items: ["React", "JavaScript ES6+", "Tailwind CSS"] },
 ];

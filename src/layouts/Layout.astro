@@ -1,11 +1,11 @@
 ---
-// ¡El import va AQUÍ DENTRO, entre los guiones!
 import '../styles/global.css'; 
 
-const { title = "Hatim Debboun · Backend Developer" } = Astro.props;
+// Recibimos el idioma en el Layout (por defecto inglés)
+const { title = "Hatim Debboun · Backend Developer", lang = "en" } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

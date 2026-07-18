@@ -1,13 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import LangSwitch from "../components/LangSwitch.astro";
 import Hero from "../components/Hero.astro";
 import Skills from "../components/Skills.astro";
 import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
 ---
 <Layout>
-  <Hero />
-  <Skills />
-  <Projects />
-  <Contact />
+  <LangSwitch lang="en" />
+  <Hero lang="en"/>
+  <Skills lang="en"/>
+  <Projects lang="en"/>
+  <Contact lang="en"/>
 </Layout>
