@@ -50,7 +50,7 @@ export const languages = {
         'projects.reservations.point3': "Panel de administración con CRUD completo y DTOs para desacoplamiento de capas",
 
         'contact.title': "Hablemos",
-        'contact.subtitle': "Abierto a oportunidades de backend/full stack. Con sede en Barcelona.",
+        'contact.subtitle': "Abierto a oportunidades de backend/full stack. Residente en Barcelona.",
         'contact.copy': "Creado con Astro + Tailwind CSS · Implementado mediante GitHub Actions"
     }
 };
