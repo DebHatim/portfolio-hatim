@@ -5,11 +5,11 @@ const { lang = "en" } = Astro.props;
 const t = languages[lang];
 
 const groups = [
-  { label: "Backend", items: ["Java 21", "Spring Boot", "Spring Security", "REST APIs", "Apache Kafka", "WebSocket"] },
+  { label: "Backend", items: ["Java 21", "Spring Boot", "REST APIs", "Apache Kafka", "Spring Security", "WebSocket/STOMP", "PHP"] },
+  { label: "Frontend", items: ["JavaScript ES6+", "React", "Bootstrap", "Thymeleaf", "HTML5", "CSS3"] },
   { label: "Persistence", items: ["JPA/Hibernate", "MySQL", "PostgreSQL"] },
-  { label: t['stack.testing.text'], items: ["JUnit 5", "Mockito", "Clean Code", "SOLID"] }, // ¡Llaves corregidas aquí!
-  { label: "DevOps", items: ["Docker", "GitHub Actions", "CI/CD", "Nginx"] },
-  { label: "Frontend", items: ["React", "JavaScript ES6+", "Tailwind CSS"] },
+  { label: t['stack.testing.text'], items: ["JUnit 5", "Mockito", "Clean Code", "SOLID", "Bean Validation"] },
+  { label: "DevOps", items: ["Docker", "GitHub Actions", "Git", "Maven", "Nginx"] },
 ];
 ---
 <section class="max-w-4xl mx-auto px-6 py-16 border-t border-slate-800">
