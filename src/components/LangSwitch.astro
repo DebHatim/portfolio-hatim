@@ -1,7 +1,7 @@
 ---
-const { current } = Astro.props; // "en" o "es"
+const { lang = "en" } = Astro.props;
 ---
-<div class="fixed top-6 right-6 flex gap-1 bg-slate-900/80 backdrop-blur border border-slate-800 rounded-full p-1 text-xs font-medium z-50">
-  <a href="/" class={`px-3 py-1.5 rounded-full transition-colors ${current === "en" ? "bg-emerald-600 text-white" : "text-slate-400 hover:text-white"}`}>EN</a>
-  <a href="/es" class={`px-3 py-1.5 rounded-full transition-colors ${current === "es" ? "bg-emerald-600 text-white" : "text-slate-400 hover:text-white"}`}>ES</a>
+<div class="fixed bottom-6 left-6 z-40 flex items-center overflow-hidden border border-spring/30 bg-ink/90 shadow-lg backdrop-blur font-mono text-xs">
+  <a href="/" class={`px-3 py-2 transition-colors ${lang === "en" ? "bg-spring text-ink font-semibold" : "text-lavender hover:bg-spring/10 hover:text-spring"}`}>EN</a>
+  <a href="/es" class={`px-3 py-2 transition-colors border-l border-spring/30 ${lang === "es" ? "bg-spring text-ink font-semibold" : "text-lavender hover:bg-spring/10 hover:text-spring"}`}>ES</a>
 </div>

@@ -4,26 +4,49 @@ import { languages } from '../data/ui.js';
 const { lang = "en" } = Astro.props;
 const t = languages[lang];
 
-const groups = [
+const topGroups = [
   { label: "Backend", items: ["Java 21", "Spring Boot", "REST APIs", "Apache Kafka", "Spring Security", "WebSocket/STOMP", "PHP"] },
   { label: "Frontend", items: ["JavaScript ES6+", "React", "Bootstrap", "Thymeleaf", "HTML5", "CSS3"] },
+];
+
+const bottomGroups = [
   { label: "Persistence", items: ["JPA/Hibernate", "MySQL", "PostgreSQL"] },
   { label: t['stack.testing.text'], items: ["JUnit 5", "Mockito", "Clean Code", "SOLID", "Bean Validation"] },
   { label: "DevOps", items: ["Docker", "GitHub Actions", "Git", "Maven", "Nginx"] },
 ];
 ---
-<section class="max-w-4xl mx-auto px-6 py-16 border-t border-slate-800">
-  <h3 class="text-sm uppercase tracking-widest text-emerald-400 mb-8">Stack</h3>
-  <div class="grid sm:grid-cols-2 gap-8">
-    {groups.map((g) => (
-      <div>
-        <p class="text-slate-400 text-sm font-medium mb-3">{g.label}</p>
-        <div class="flex flex-wrap gap-2">
-          {g.items.map((i) => (
-            <span class="text-xs bg-slate-800 text-slate-200 px-3 py-1.5 rounded-full">{i}</span>
-          ))}
-        </div>
+<section id="skills" class="mx-auto max-w-6xl border-t border-prussian px-6 py-16">
+  <div data-reveal>
+    <p class="mb-8 font-mono text-sm tracking-wide text-spring uppercase">> {t['nav.skills']}</p>
+    
+    <div class="flex flex-col gap-6">
+      
+      <div class="grid gap-6 md:grid-cols-2">
+        {topGroups.map((g) => (
+          <div class="group flex flex-col border border-dusk/40 bg-prussian/40 p-5 transition-all hover:-translate-y-1 hover:border-spring/50 hover:bg-prussian shadow-sm">
+            <p class="mb-4 font-display text-lg font-semibold text-alabaster">{g.label}</p>
+            <div class="flex flex-wrap gap-2">
+              {g.items.map((i) => (
+                <span class="bg-ink border border-dusk/30 px-2.5 py-1 font-mono text-xs text-lavender transition-colors group-hover:border-spring/40 group-hover:text-alabaster">{i}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {bottomGroups.map((g) => (
+          <div class="group flex flex-col border border-dusk/40 bg-prussian/40 p-5 transition-all hover:-translate-y-1 hover:border-spring/50 hover:bg-prussian shadow-sm">
+            <p class="mb-4 font-display text-lg font-semibold text-alabaster">{g.label}</p>
+            <div class="flex flex-wrap gap-2">
+              {g.items.map((i) => (
+                <span class="bg-ink border border-dusk/30 px-2.5 py-1 font-mono text-xs text-lavender transition-colors group-hover:border-spring/40 group-hover:text-alabaster">{i}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
   </div>
 </section>

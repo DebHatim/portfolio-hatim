@@ -1,7 +1,8 @@
 ---
-import '../styles/global.css'; 
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import LangSwitch from '../components/LangSwitch.astro';
 
-// Recibimos el idioma en el Layout (por defecto inglés)
 const { title = "Hatim Debboun · Backend Developer", lang = "en" } = Astro.props;
 ---
 <!doctype html>
@@ -9,16 +10,86 @@ const { title = "Hatim Debboun · Backend Developer", lang = "en" } = Astro.prop
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Java Backend Developer specialized in Spring Boot, event-driven architectures and REST APIs." />
+    <meta name="description" content="Java backend developer specialized in Spring Boot, event-driven architectures and REST APIs." />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Java Backend Developer specialized in Spring Boot, event-driven architectures and REST APIs." />
+    <meta property="og:description" content="Java backend developer specialized in Spring Boot, event-driven architectures and REST APIs." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hatimdebboun.dev" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          return 'light';
+        }
+        return 'dark';
+      })();
+      if (theme === 'light') {
+        document.documentElement.classList.add('light');
+      } else {
+        document.documentElement.classList.remove('light');
+      }
+    </script>
+
     <title>{title}</title>
   </head>
-  <body class="bg-slate-950 text-slate-100 font-sans antialiased">
-    <slot />
+  <body id="top" class="bg-ink text-alabaster font-sans antialiased selection:bg-spring selection:text-ink transition-colors duration-300">
+    <Header lang={lang} />
+    <LangSwitch lang={lang} />
+    
+    <main>
+      <slot />
+    </main>
+
+    <button 
+      id="scrollToTopBtn" 
+      aria-label="Scroll to top" 
+      class="fixed bottom-6 right-6 z-40 p-2.5 bg-prussian/90 border border-spring/50 text-spring opacity-0 invisible translate-y-4 transition-all duration-300 hover:bg-spring hover:text-ink hover:scale-110 shadow-lg backdrop-blur"
+    >
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+      </svg>
+    </button>
+
+    <script>
+      const revealEls = document.querySelectorAll('[data-reveal]');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+
+      const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+          scrollToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+        } else {
+          scrollToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+          scrollToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        }
+      });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>
