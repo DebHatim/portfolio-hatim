@@ -24,7 +24,7 @@ export const languages = {
 
         'projects.orders.title': "Real-Time Ordering and Inventory System",
         'projects.orders.status': "Closed",
-        'projects.orders.description': "A microservices-based e-commerce platform where a user creates an order, the system asynchronously reserves stock, and notifies the user in real time whether the order is confirmed or rejected due to lack of stock.",
+        'projects.orders.description': "E-commerce platform built on 4 independent microservices (gateway, orders, inventory, notifications) communicating asynchronously via Kafka, with full resilience and observability.",
 
         'contact.title': "Let's talk",
         'contact.subtitle': "Open to backend/full stack opportunities. Based in Barcelona.",
@@ -55,7 +55,7 @@ export const languages = {
 
         'projects.orders.title': "Servicios API Gateway",
         'projects.orders.status': "Cerrado",
-        'projects.orders.description': "Plataforma de e-commerce basada en microservicios donde un usuario crea un pedido, el sistema reserva el stock de forma asíncrona y le notifica en tiempo real si el pedido se confirma o se rechaza por falta de stock.",
+        'projects.orders.description': "Plataforma de e-commerce basada en 4 microservicios independientes (gateway, pedidos, inventario, notificaciones) comunicados de forma asíncrona vía Kafka, con resiliencia y observabilidad completas.",
 
         'contact.title': "Hablemos",
         'contact.subtitle': "Abierto a oportunidades de backend/full stack. Residente en Barcelona.",
