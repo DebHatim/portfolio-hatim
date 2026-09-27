@@ -23,7 +23,7 @@ export const languages = {
         'projects.reservations.description': "REST API and backend web application for full hotel and reservation management, with role-based auth and double-booking prevention.",
 
         'projects.orders.title': "Real-Time Ordering and Inventory System",
-        'projects.orders.status': "In development",
+        'projects.orders.status': "Closed",
         'projects.orders.description': "A microservices-based e-commerce platform where a user creates an order, the system asynchronously reserves stock, and notifies the user in real time whether the order is confirmed or rejected due to lack of stock.",
 
         'contact.title': "Let's talk",
@@ -42,7 +42,7 @@ export const languages = {
 
         'stack.testing.text': "Testing y Calidad",
 
-        'projects.demobutton.text': "Demostración en vivo",
+        'projects.demobutton.text': "Proyecto en producción",
         'projects.repobutton.text': "Ver repositorio",
 
         'projects.alerts.title': "Sistema de alertas de precios en tiempo real",
@@ -54,7 +54,7 @@ export const languages = {
         'projects.reservations.description': "API REST y aplicación web de backend para la gestión integral de hoteles y reservas, con autenticación basada en roles y prevención de reservas duplicadas.",
 
         'projects.orders.title': "Servicios API Gateway",
-        'projects.orders.status': "En desarrollo",
+        'projects.orders.status': "Cerrado",
         'projects.orders.description': "Plataforma de e-commerce basada en microservicios donde un usuario crea un pedido, el sistema reserva el stock de forma asíncrona y le notifica en tiempo real si el pedido se confirma o se rechaza por falta de stock.",
 
         'contact.title': "Hablemos",
