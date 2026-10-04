@@ -10,6 +10,7 @@ export const languages = {
         'hero.contactbutton.text': "Contact me",
 
         'stack.testing.text': "Testing & Quality",
+        'stack.observability.text': "Observability",
 
         'projects.demobutton.text': "Live demo",
         'projects.repobutton.text': "View repo",
@@ -22,7 +23,7 @@ export const languages = {
         'projects.reservations.status': "Closed",
         'projects.reservations.description': "REST API and backend web application for full hotel and reservation management, with role-based auth and double-booking prevention.",
 
-        'projects.orders.title': "Real-Time Ordering and Inventory System",
+        'projects.orders.title': "Order & Inventory System",
         'projects.orders.status': "Closed",
         'projects.orders.description': "E-commerce platform built on 4 independent microservices (gateway, orders, inventory, notifications) communicating asynchronously via Kafka, with full resilience and observability.",
 
@@ -41,6 +42,7 @@ export const languages = {
         'hero.contactbutton.text': "Contacta conmigo",
 
         'stack.testing.text': "Testing y Calidad",
+        'stack.observability.text': "Observabilidad",
 
         'projects.demobutton.text': "Proyecto en producción",
         'projects.repobutton.text': "Ver repositorio",
@@ -53,7 +55,7 @@ export const languages = {
         'projects.reservations.status': "Cerrado",
         'projects.reservations.description': "API REST y aplicación web de backend para la gestión integral de hoteles y reservas, con autenticación basada en roles y prevención de reservas duplicadas.",
 
-        'projects.orders.title': "Servicios API Gateway",
+        'projects.orders.title': "Sistema de Pedidos e Inventario",
         'projects.orders.status': "Cerrado",
         'projects.orders.description': "Plataforma de e-commerce basada en 4 microservicios independientes (gateway, pedidos, inventario, notificaciones) comunicados de forma asíncrona vía Kafka, con resiliencia y observabilidad completas.",
 

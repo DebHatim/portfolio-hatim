@@ -4,15 +4,13 @@ import { languages } from '../data/ui.js';
 const { lang = "en" } = Astro.props;
 const t = languages[lang];
 
-const topGroups = [
-  { label: "Backend", items: ["Java 21", "Spring Boot", "REST APIs", "Apache Kafka", "Spring Security", "WebSocket/STOMP", "PHP"] },
+const skillsGroups = [
+  { label: "Backend", items: ["Java 21", "Spring Boot", "REST APIs", "Apache Kafka", "Spring Cloud Gateway", "Resilience4j", "Spring Security", "WebSocket/STOMP", "PHP"] },
   { label: "Frontend", items: ["JavaScript ES6+", "React", "Bootstrap", "Thymeleaf", "HTML5", "CSS3"] },
-];
-
-const bottomGroups = [
-  { label: "Persistence", items: ["JPA/Hibernate", "MySQL", "PostgreSQL"] },
+  { label: "Persistence", items: ["JPA/Hibernate", "MySQL", "PostgreSQL", "Redis"] },
   { label: t['stack.testing.text'], items: ["JUnit 5", "Mockito", "Clean Code", "SOLID", "Bean Validation"] },
-  { label: "DevOps", items: ["Docker", "GitHub Actions", "Git", "Maven", "Nginx"] },
+  { label: t['stack.observability.text'], items: ["Prometheus", "Grafana", "Jaeger", "OpenTelemetry", "Spring Boot Actuator"] },
+  { label: "DevOps", items: ["Docker", "Docker Compose", "GitHub Actions", "Git", "Maven", "Nginx"] },
 ];
 ---
 <section id="skills" class="mx-auto max-w-6xl border-t border-prussian px-6 py-16">
@@ -22,20 +20,7 @@ const bottomGroups = [
     <div class="flex flex-col gap-6">
       
       <div class="grid gap-6 md:grid-cols-2">
-        {topGroups.map((g) => (
-          <div class="group flex flex-col border border-dusk/40 bg-prussian/40 p-5 transition-all hover:-translate-y-1 hover:border-spring/50 hover:bg-prussian shadow-sm">
-            <p class="mb-4 font-display text-lg font-semibold text-alabaster">{g.label}</p>
-            <div class="flex flex-wrap gap-2">
-              {g.items.map((i) => (
-                <span class="bg-ink border border-dusk/30 px-2.5 py-1 font-mono text-xs text-lavender transition-colors group-hover:border-spring/40 group-hover:text-alabaster">{i}</span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-3">
-        {bottomGroups.map((g) => (
+        {skillsGroups.map((g) => (
           <div class="group flex flex-col border border-dusk/40 bg-prussian/40 p-5 transition-all hover:-translate-y-1 hover:border-spring/50 hover:bg-prussian shadow-sm">
             <p class="mb-4 font-display text-lg font-semibold text-alabaster">{g.label}</p>
             <div class="flex flex-wrap gap-2">
@@ -50,3 +35,96 @@ const bottomGroups = [
     </div>
   </div>
 </section>
+
+<style>
+@import "tailwindcss";
+
+:root {
+  --color-ink-base: #0d1b2a;
+  --color-prussian-base: #1b263b;
+  --color-dusk-base: #415a77;
+  --color-lavender-base: #778da9;
+  --color-alabaster-base: #e0e1dd;
+  --color-spring-base: #6db33f;
+}
+
+html.light {
+  --color-ink-base: #f4f5f7;
+  --color-prussian-base: #e2e8f0;
+  --color-dusk-base: #cbd5e1;
+  --color-lavender-base: #475569;
+  --color-alabaster-base: #0f172a;
+  --color-spring-base: #528a2b;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-ink: var(--color-ink-base);
+  --color-prussian: var(--color-prussian-base);
+  --color-dusk: var(--color-dusk-base);
+  --color-lavender: var(--color-lavender-base);
+  --color-alabaster: var(--color-alabaster-base);
+  --color-spring: var(--color-spring-base);
+}
+
+html.light .icon-sun {
+  display: none;
+}
+html:not(.light) .icon-moon {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+::selection {
+  background: var(--color-spring);
+  color: var(--color-ink);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spring-logo {
+  transform-origin: bottom center;
+  animation: spring-loop 1.2s infinite linear;
+}
+
+@keyframes spring-loop {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(0.7) scaleX(1.3);
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  }
+  50% {
+    transform: translateY(-40px) scaleY(1) scaleX(1);
+    animation-timing-function: cubic-bezier(0.9, 0.1, 0.9, 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .spring-logo {
+    animation: none;
+  }
+}
+</style>
