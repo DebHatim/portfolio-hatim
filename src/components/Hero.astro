@@ -8,7 +8,7 @@ const t = languages[lang];
 <section id="hero" class="mx-auto max-w-6xl px-6 pt-24 pb-20">
   <div data-reveal class="flex flex-col md:flex-row items-center justify-between gap-12">
     <div class="flex-1">
-      <p class="mb-6 font-mono text-xs tracking-wide text-spring">Hi! I'm:</p>
+      <p class="mb-6 font-mono text-xs tracking-wide text-spring">{t['hero.title']}</p>
 
       <h1 class="font-display text-5xl font-semibold tracking-tight text-spring md:text-6xl drop-shadow-sm">
         Hatim Debboun
@@ -33,6 +33,18 @@ const t = languages[lang];
         <a href="https://linkedin.com/in/hatimdebboun" target="_blank" rel="noopener"
            class="inline-flex items-center gap-1.5 text-sm font-mono text-lavender transition-colors hover:text-spring">
           LinkedIn
+          <ArrowUpRight size={10} />
+        </a>
+
+        <a href="/HatimDebboun_CV_EN.pdf" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 text-sm font-mono text-lavender transition-colors hover:text-spring">
+          {t['hero.resume1.text']}
+          <ArrowUpRight size={10} />
+        </a>
+
+        <a href="/HatimDebboun_CV.pdf" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 text-sm font-mono text-lavender transition-colors hover:text-spring">
+          {t['hero.resume2.text']}
           <ArrowUpRight size={10} />
         </a>
       </div>

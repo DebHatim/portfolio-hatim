@@ -5,9 +5,12 @@ export const languages = {
         'nav.skills': "Skills",
         'nav.contact': "Contact",
 
+        'hero.title': "Hi! I'm",
         'hero.subtitle': "Backend Developer · Java & Spring Boot",
         'hero.description': "Backend developer passionate about building robust and scalable systems. I focus on event-driven architectures, security by design, and best testing practices to ensure high-quality code for production. Seeking my first full-time opportunity to continue growing and adding value.",
         'hero.contactbutton.text': "Contact me",
+        'hero.resume1.text': "English resume",
+        'hero.resume2.text': "Spanish resume",
 
         'stack.testing.text': "Testing & Quality",
         'stack.observability.text': "Observability",
@@ -37,9 +40,12 @@ export const languages = {
         'nav.skills': "Habilidades",
         'nav.contact': "Contacto",
 
+        'hero.title': "Hola! soy",
         'hero.subtitle': "Desarrollador Backend · Java & Spring Boot",
         'hero.description': "Desarrollador backend apasionado por crear sistemas robustos y escalables. Me enfoco en arquitecturas dirigidas por eventos, seguridad desde el diseño y buenas prácticas de testing para asegurar que el código llegue a producción con calidad. Buscando mi primera oportunidad a tiempo completo para seguir creciendo y aportando valor.",
         'hero.contactbutton.text': "Contacta conmigo",
+        'hero.resume1.text': "CV en inglés",
+        'hero.resume2.text': "CV en español",
 
         'stack.testing.text': "Testing y Calidad",
         'stack.observability.text': "Observabilidad",
