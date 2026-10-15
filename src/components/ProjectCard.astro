@@ -15,7 +15,7 @@ const status = t[`projects.${project.id}.status`];
   
   <div class="relative aspect-4/3 w-full overflow-hidden border-b border-dusk/40 bg-white/5 p-4 flex items-center justify-center">
     <img src={project.image} alt={`${title} preview`} loading="lazy" 
-      class="h-full w-full object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-105"/>
+      class="h-full w-full object-cover drop-shadow-lg transition-transform duration-500 group-hover:scale-105"/>
   </div>
 
   <div class="flex flex-1 flex-col p-5">
@@ -38,8 +38,14 @@ const status = t[`projects.${project.id}.status`];
     <hr class="mt-5 border-t border-dusk/30" />
 
     <div class="mt-4 flex items-center justify-center">
-      <span class="border border-spring/30 bg-spring/10 px-2 py-0.5 font-mono text-[11px] text-spring">
+      <span class="border border-spring/30 bg-spring/10 px-2 py-0.5 font-mono text-[14px] text-spring">
         {status}
+        {project.date && (
+            <>
+              <span class="text-spring/50"> - </span>
+              <span class="text-lavender">{project.date}</span>
+            </>
+          )}
       </span>
     </div>
 
@@ -56,12 +62,16 @@ const status = t[`projects.${project.id}.status`];
       </a>
 
       {
-        project.live && (
+        project.live ? (
           <a href={project.live} target="_blank" rel="noopener"
             class="flex w-full items-center justify-center gap-1.5 text-sm text-lavender transition-colors hover:text-spring">
             {t["projects.demobutton.text"]}
             <ArrowUpRight size={11} />
           </a>
+        ) : (
+          <span class="flex w-full items-center justify-center text-sm text-lavender/50">
+            {t["projects.nodemobutton.text"]}
+          </span>
         )
       }
     </div>

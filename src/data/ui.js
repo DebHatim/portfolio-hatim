@@ -16,6 +16,7 @@ export const languages = {
         'stack.observability.text': "Observability",
 
         'projects.demobutton.text': "Live demo",
+        'projects.nodemobutton.text': "No live demo",
         'projects.repobutton.text': "View repo",
 
         'projects.alerts.title': "Real-Time Price Alerts System",
@@ -51,6 +52,7 @@ export const languages = {
         'stack.observability.text': "Observabilidad",
 
         'projects.demobutton.text': "Proyecto en producción",
+        'projects.nodemobutton.text': "Sin demostración en vivo",
         'projects.repobutton.text': "Ver repositorio",
 
         'projects.alerts.title': "Sistema de alertas de precios en tiempo real",
