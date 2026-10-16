@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import LangSwitch from '../components/LangSwitch.astro';
 
-const { title = "Hatim Debboun · Backend Developer", lang = "en" } = Astro.props;
+const { title = "Hatim Debboun · Portfolio", lang = "en" } = Astro.props;
 ---
 <!doctype html>
 <html lang={lang}>
@@ -11,6 +11,14 @@ const { title = "Hatim Debboun · Backend Developer", lang = "en" } = Astro.prop
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Java backend developer specialized in Spring Boot, event-driven architectures and REST APIs." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hatim Debboun · Portfolio",
+        "url": "https://hatimdebboun.dev"
+      }
+    </script>
     <meta property="og:title" content={title} />
     <meta property="og:description" content="Java backend developer specialized in Spring Boot, event-driven architectures and REST APIs." />
     <meta property="og:type" content="website" />
