@@ -21,7 +21,7 @@ export const projectsConfig = [
     id: "reservations",
     date: "05/2026",
     image: "/projects/reservations.png",
-    stack: ["Java 21", "Spring Boot 4.0", "Spring Security", "JPA/Hibernate", "MySQL", "Thymeleaf"],
+    stack: ["Java 21", "Spring Boot 4.0.3", "Spring Security", "JPA/Hibernate", "MySQL", "Thymeleaf"],
     github: "https://github.com/DebHatim/reservasSpringBoot",
     live: null
   }
